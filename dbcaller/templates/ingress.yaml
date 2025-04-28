@@ -27,11 +27,9 @@ spec:
     {{- range .Values.ingress.hosts }}
       http:
         paths:
-          {{- range .paths }}
-          - path: {{ .path }}
-            {{- with .pathType }}
-            pathType: {{ . }}
-            {{- end }}
+          - path: /ingpath
+            pathType: Prefix
+    {{- end }}
             backend:
               service:
                 name: {{ include "dbcaller.fullname" $ }}
