@@ -20,4 +20,11 @@ spec:
         imagePullPolicy: Never
         ports:
         - containerPort: 8080
-
+          volumeMounts:
+            - name: app-settings-volume
+              mountPath: /src/appsettings.json  # Mount at the path where appsettings.json is expected
+              subPath: appsettings.json       # Ensures that the file is mounted as appsettings.json
+      volumes:
+        - name: app-settings-volume
+          configMap:
+            name: appsettings-config  # Reference to the ConfigMap we created

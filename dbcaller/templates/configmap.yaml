@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: appsettings-config
+data:
+  appsettings.json: |
+    {
+    "Logging": {
+    "LogLevel": {
+    "Default": "Information",
+    "Microsoft.AspNetCore": "Warning"
+    }
+    },
+    "AllowedHosts": "*",
+    "ConnectionStrings": {
+    "myConnection": "Host=postgres-postgresql;Port=5432;Database=TESTING;Username=postgres;Password=0F8v5J7yN2"
+    }
+    }
+
