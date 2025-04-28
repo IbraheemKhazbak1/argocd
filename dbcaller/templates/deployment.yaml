@@ -17,7 +17,7 @@ spec:
       containers:
       - name: {{ .Chart.Name }}
         image: 
-          pullPolicy: IfNotPresent
+          pullPolicy: Never
           tag: dbcaller
         ports:
         - containerPort: 8080
