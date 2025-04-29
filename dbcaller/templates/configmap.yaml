@@ -13,7 +13,7 @@ data:
     },
     "AllowedHosts": "*",
     "ConnectionStrings": {
-    "myConnection": "Host=postgres-postgresql;Port=5432;Database=TESTING;Username=postgres;Password=0F8v5J7yN2"
+    "myConnection": "Host=postgres-postgresql;Port=5432;Database={{ .Values.DbPrefix }}_TESTING;Username=postgres;Password=0F8v5J7yN2"
     }
     }
 
