@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: localhost/hello-world
+  repository: hello-world
   tag: "latest"
   pullPolicy: IfNotPresent
 
