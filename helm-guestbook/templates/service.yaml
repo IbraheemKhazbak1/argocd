@@ -1,19 +1,20 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ template "helm-guestbook.fullname" . }}
+  name: {{ include "openspeedtest.fullname" . }}
   labels:
-    app: {{ template "helm-guestbook.name" . }}
-    chart: {{ template "helm-guestbook.chart" . }}
-    release: {{ .Release.Name }}
-    heritage: {{ .Release.Service }}
+    {{- include "openspeedtest.labels" . | nindent 4 }}
 spec:
   type: {{ .Values.service.type }}
+{{- if eq .Values.service.type "LoadBalancer" }}
+{{- if hasKey .Values.service "loadBalancerIP" }}
+  loadBalancerIP: {{ .Values.service.loadBalancerIP}}
+{{- end }}
+{{- end }}
   ports:
     - port: {{ .Values.service.port }}
       targetPort: http
       protocol: TCP
       name: http
   selector:
-    app: {{ template "helm-guestbook.name" . }}
-    release: {{ .Release.Name }}
+    {{- include "openspeedtest.selectorLabels" . | nindent 4 }}
