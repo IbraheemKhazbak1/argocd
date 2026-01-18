@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: test-rest-api
+  repository: vanapagan/test-rest-api
   tag: "latest"
   pullPolicy: IfNotPresent
 
