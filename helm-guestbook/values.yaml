@@ -5,8 +5,8 @@
 replicaCount: 1
 
 image:
-  repository: "local/weatherapi"
-  pullPolicy: IfNotPresent
+  repository: "weatherapi"
+  pullPolicy: Never
   # Overrides the image tag whose default is the chart appVersion.
   tag: "latest"
 
