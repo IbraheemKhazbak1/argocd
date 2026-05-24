@@ -8,7 +8,7 @@ image:
   repository: "hello-world"
   pullPolicy: Never
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "nanoserver-ltsc2025"
+  tag: "linux"
 
 imagePullSecrets: []
 nameOverride: ""
