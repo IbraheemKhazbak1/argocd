@@ -5,10 +5,10 @@
 replicaCount: 1
 
 image:
-  repository: "weatherapi"
+  repository: "hello-world"
   pullPolicy: Never
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "latest"
+  tag: "nanoserver-ltsc2025"
 
 imagePullSecrets: []
 nameOverride: ""
